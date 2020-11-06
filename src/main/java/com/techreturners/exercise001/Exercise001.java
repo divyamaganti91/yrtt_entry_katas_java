@@ -10,8 +10,32 @@ public class Exercise001 {
 
     // Good luck!
 
-    public int singles(int [] arr){
-        // Add your code here!
-        return 0;
+    private int[] tempArray = null;
+
+    public int singles(int[] arr) {
+        tempArray = arr;
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (isOccurredOnlyOnce(arr[i])) {
+                sum = sum + arr[i];
+            }
+        }
+        return sum;
     }
+
+    private boolean isOccurredOnlyOnce(int number) {
+        //Find out if the number occurred more than once
+        int numOfOccurencies = 0;
+        for (int i = 0; i < tempArray.length; i++) {
+            //If number exists increment the count
+            if (tempArray[i] == number) {
+                numOfOccurencies = numOfOccurencies + 1;
+            }
+        }
+        return numOfOccurencies == 1;
+
+    }
+
+
+
 }
