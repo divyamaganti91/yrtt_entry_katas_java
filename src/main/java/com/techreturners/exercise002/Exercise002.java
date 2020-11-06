@@ -7,6 +7,7 @@ public class Exercise002 {
 
     public int past(int h, int m, int s) {
         // Your code here!
-        return 0;
+        int totalmillis = h*60*60*1000 + m*60*1000 + s*1000;
+        return totalmillis;
     }
 }
