@@ -26,7 +26,23 @@ public class Exercise005 {
     // Good luck and enjoy!
 
     public String[] mexicanWave(String str) {
+        String[] waveString =new String[str.replaceAll("\\s+","").length()];
         // Your code here!
-        return new String[] {};
+        if(waveString.length == 0){
+            return waveString;
+        }
+        int position = 0;
+        for(int i = 0 ; i< str.length(); i++){
+            if(str.charAt(i) != ' '){
+                if (i == 0) {
+                    waveString[position] = Character.toUpperCase(str.charAt(0)) + str.substring(1);
+                    position++;
+                } else {
+                    waveString[position] = str.substring(0, i) + Character.toUpperCase(str.charAt(i)) + str.substring(i + 1, str.length());
+                    position++;
+                }
+            }
+        }
+        return waveString;
     }
 }
